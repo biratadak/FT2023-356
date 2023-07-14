@@ -1,0 +1,10 @@
+my_module.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\MyModuleController::content'
+    _title: 'This is route title'
+  requirements:
+    _permission: 'access content'
+
+
+    
