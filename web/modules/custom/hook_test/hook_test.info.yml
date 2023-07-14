@@ -1,0 +1,4 @@
+name: hook_test
+type: module
+description: 'This module is created to test the hook implementation in a form'
+core_version_requirement: ^10

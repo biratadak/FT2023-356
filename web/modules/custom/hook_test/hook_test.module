@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Change form title using hook_form_alter.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function hook_test_form_alter(&$form, &$form_state, &$form_id) {
+  // Change the title of the custom form.
+  if ($form_id === 'myFormId') {
+    $form['name']['#title'] = ('New Form Title');
+  }
+}
