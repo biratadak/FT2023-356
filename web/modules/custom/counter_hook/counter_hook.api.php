@@ -13,4 +13,3 @@ function hook_counter($current_count, \Drupal\node\NodeInterface $node) {
     \Drupal::messenger()->addMessage(t('This node visited for first time.'));
   }
 }
-git 
