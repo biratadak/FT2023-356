@@ -1,0 +1,7 @@
+hooktest:
+  path: 'hook_test/counter'
+  defaults:
+    _form: '\Drupal\hook_test\Form\HookTest'
+    _title: 'hook test Title'
+  requirements:
+    _access: 'TRUE'
