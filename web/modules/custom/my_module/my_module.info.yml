@@ -1,7 +1,6 @@
 name: my_module
 type: module
-description: This module , changes the css of the route .
+description: Shows hello message to user .
 core_version_requirement: ^9.3 || ^10
 dependencies:
   - devel
-
