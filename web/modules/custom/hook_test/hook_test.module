@@ -13,5 +13,4 @@ function hook_test_form_alter(&$form, &$form_state, &$form_id) {
   if ($form_id === 'myFormId') {
     $form['name']['#title'] = ('New Form Title');
   }
-  print_r($form_state->getValue('name'));
 }
