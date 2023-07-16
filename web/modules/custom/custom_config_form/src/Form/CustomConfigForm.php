@@ -2,19 +2,28 @@
 
 namespace Drupal\custom_config_form\Form;
 
+use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Form\FormBase;
 
 /**
  * Creates a generic form with form validation.
  */
-class CustomConfigForm extends FormBase {
+class CustomConfigForm extends ConfigFormBase {
 
   /**
    * @inheritDoc
    */
   public function getFormId() {
     return 'Custom_form';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getEditableConfigNames() {
+    return [
+      'custom_config_form.admin_settings',
+    ];
   }
 
   /**
