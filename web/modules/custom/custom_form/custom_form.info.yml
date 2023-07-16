@@ -1,0 +1,4 @@
+name: Custom Form
+type: module
+description: Basic Form testing module
+core_version_requirement: ^10
