@@ -1,0 +1,8 @@
+custom_config_form.admin_settings:
+  path: /admin/config/custom_config_form
+  defaults:
+    _form: Drupal\custom_config_form\Form\CustomConfigForm
+    _title: Test Custom Config form
+  requirements:
+    _access: 'TRUE'
+    _permission: 'administer site configuration'
