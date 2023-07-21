@@ -6,3 +6,12 @@ custom_config_form.admin_settings:
   requirements:
     _access: 'TRUE'
     _permission: 'administer site configuration'
+
+custom_config_form.show_content:
+  path: '/show'
+  defaults:
+    _controller: 'Drupal\custom_config_form\Controller\ShowConfigController::showContent'
+    _title: Results of Custom Config form
+  requirements:
+    _access: 'TRUE'
+    _permission: 'access content'

@@ -30,6 +30,7 @@ class CustomConfigForm extends ConfigFormBase {
    * @inheritDoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+
     $form['name'] = [
       '#type'      => 'textfield',
       '#title'     => 'FullName',
@@ -52,14 +53,11 @@ class CustomConfigForm extends ConfigFormBase {
 
     $form['gender'] = [
       '#type' => 'radios',
-      '#title' => $this
-        ->t('Gender'),
-      '#default_value' => 1,
+      '#title' => $this->t('Gender'),
+      '#default_value' => 'male',
       '#options' => [
-        1 => $this
-          ->t('Male'),
-        2 => $this
-          ->t('Female'),
+        'male' => $this->t('Male'),
+        'female' => $this->t('Female'),
       ],
     ];
 
@@ -101,7 +99,14 @@ class CustomConfigForm extends ConfigFormBase {
    * @inheritDoc
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $config = $this->config('custom_config_form.admin_settings');
+    $config->set('name', $form_state->getValue('name'));
+    $config->set('phone', $form_state->getValue('phone'));
+    $config->set('email', $form_state->getValue('email'));
+    $config->set('gender', $form_state->getValue('gender'));
+    $config->save();
     \Drupal::messenger()->addMessage(t('Form submitted successfully'));
+    return parent::submitForm($form, $form_state);
   }
 
 }
