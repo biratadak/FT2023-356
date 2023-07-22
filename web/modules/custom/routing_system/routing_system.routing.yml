@@ -4,5 +4,4 @@ routing_system_route.content:
     _title: Routing System
     _controller: Drupal\routing_system\controller\RouteController::myContent
   requirements:
-    _permission: 'access content'
-    _role: administrator + content_editor
+    _permission: 'access the custom page'
