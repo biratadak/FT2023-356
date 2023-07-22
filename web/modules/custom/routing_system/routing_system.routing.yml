@@ -1,0 +1,9 @@
+routing_system_route.content:
+  path: /route/test
+  defaults:
+    _title: Routing System
+    _controller: Drupal\routing_system\controller\RouteController::myContent
+  requirements:
+    _permission: 'access content'
+    _role: administrator + content_editor
+
