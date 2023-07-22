@@ -19,4 +19,14 @@ class RouteController extends ControllerBase {
     ];
   }
 
+  /**
+   * Show text at the route with given slug.
+   */
+  public function campaignContent(String $slug) {
+    return [
+      "#type" => "markup",
+      "#markup" => "The Campaign value is: " . $slug,
+    ];
+  }
+
 }

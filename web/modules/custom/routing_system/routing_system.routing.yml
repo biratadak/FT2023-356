@@ -5,3 +5,11 @@ routing_system_route.content:
     _controller: Drupal\routing_system\controller\RouteController::myContent
   requirements:
     _custom_access: 'Drupal\routing_system\access\AccessCheck::Access'
+
+routing_system_route.campaign:
+  path: /campaign/value/{slug}
+  defaults:
+    _title: Routing System
+    _controller: Drupal\routing_system\controller\RouteController::campaignContent
+  requirements:
+    _permission: 'access content'
