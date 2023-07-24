@@ -1,0 +1,7 @@
+hooktest:
+  path: 'hook-test/form'
+  defaults:
+    _form: '\Drupal\hook_test\Form\HookTest'
+    _title: 'hook test'
+  requirements:
+    _access: 'TRUE'

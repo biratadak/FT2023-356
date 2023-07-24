@@ -1,0 +1,6 @@
+name: Custom Config Form
+type: module
+description: Basic Config Form testing module
+core_version_requirement: ^10
+configure: custom_config_form.admin_settings
+package: "A Custom Module"

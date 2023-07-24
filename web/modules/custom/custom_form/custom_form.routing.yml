@@ -1,0 +1,7 @@
+Custom Form:
+  path: /Form-test/1
+  defaults:
+    _form: Drupal\custom_form\Form\CustomForm
+    _title: Test Custom form
+  requirements:
+    _access: 'TRUE'

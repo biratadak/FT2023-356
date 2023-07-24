@@ -1,0 +1,4 @@
+name: counter_hook
+type: module
+description: Custom hook that shows visit count of nodes.
+core_version_requirement: ^10
