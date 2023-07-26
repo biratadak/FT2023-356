@@ -1,0 +1,5 @@
+name: Block Test
+type: module
+description: Block ticket tasks. @custom-welcome-page
+core_version_requirement: ^10
+package: custom
