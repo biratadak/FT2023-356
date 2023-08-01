@@ -1,7 +1,8 @@
 <?php
 
 /**
- * @file Set redirection to custom welcome page.
+ * @file
+ * Set redirection to custom welcome page.
  */
 
 use Drupal\Core\Form\FormStateInterface;

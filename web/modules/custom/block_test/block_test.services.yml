@@ -1,0 +1,4 @@
+services:
+  block_test.greet_hello:
+    class: Drupal\block_test\HelloService
+    arguments: ['@current_user']

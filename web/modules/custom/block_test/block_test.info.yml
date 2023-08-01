@@ -1,5 +1,5 @@
-name: Block Test
+name: Block Test with Di
 type: module
-description: Block ticket tasks. @custom-welcome-page
+description: Block ticket tasks wi Dependency injection. @custom-welcome-page
 core_version_requirement: ^10
 package: custom
