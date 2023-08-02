@@ -10,6 +10,10 @@ use Drupal\Core\Url;
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
+ * @param mixed $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param mixed $form_id
  */
 function block_test_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Alter login form and add own custom submit handler.
@@ -18,8 +22,12 @@ function block_test_form_user_login_form_alter(&$form, FormStateInterface $form_
 
 /**
  * Custom submit handler for login form.
+ *
+ * @param mixed $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
  */
 function user_login_form_submit_callback($form, FormStateInterface $form_state) {
   $url = Url::fromUri('http://www.ft2023-356.com/custom-welcome-page');
   $form_state->setRedirectUrl($url);
 }
+g

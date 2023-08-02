@@ -21,12 +21,17 @@ class MyBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * Contains the custom service object.
    *
-   * @var Drupal\block_test\Plugin\Block\MyBlockservice
+   * @var \Drupal\block_test\HelloService
    */
   protected $service;
 
   /**
-   * Injecting dependencies for service.
+   * Construct a new greet_hello service object.
+   *
+   * @param array $configuration
+   * @param mixed $plugin_id
+   * @param mixed $plugin_definition
+   * @param mixed $service
    */
   public function __construct(array $configuration, mixed $plugin_id, mixed $plugin_definition, mixed $service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
