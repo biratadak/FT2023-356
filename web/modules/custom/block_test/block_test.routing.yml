@@ -1,0 +1,7 @@
+block_test.welcome:
+  path: /custom-welcome-page
+  defaults:
+    _title: Welcome page with dependency injection.
+    _controller: Drupal\block_test\Controller\WelcomeController::content
+  requirements:
+    _permission: 'access content'
