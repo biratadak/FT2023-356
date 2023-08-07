@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains Hook implementations for the field_test module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * @file
+ * Code for the Snippets feature.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function field_test_theme() {
+  return [
+    'rgb_default' => [
+      'variables' => ['value' => NULL],
+      'template' => 'rgb-default',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function field_test_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  $result = AccessResult::neutral();
+  // Restrict the fields(combined,split,pallate) access to only admins.
+  if ($field_definition->getName() == 'field_combined' || $field_definition->getName() == 'field_split' || $field_definition->getName() == 'field_pallete') {
+    if (!in_array('administrator', $account->getRoles())) {
+      $result = AccessResult::forbidden();
+    }
+  }
+  return $result->addCacheContexts(['user.roles:administrator']);
+}
