@@ -32,8 +32,8 @@ function field_test_theme() {
  */
 function field_test_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
   $result = AccessResult::neutral();
-  // Restrict the fields(combined,split,pallate) access to only admins.
-  if ($field_definition->getName() == 'field_combined' || $field_definition->getName() == 'field_split' || $field_definition->getName() == 'field_pallete') {
+  // Restrict the access of this field to only admins.
+  if ($field_definition->getType() == 'rgb_item' ) {
     if (!in_array('administrator', $account->getRoles())) {
       $result = AccessResult::forbidden();
     }
