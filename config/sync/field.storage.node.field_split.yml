@@ -1,0 +1,19 @@
+uuid: f121aa04-2fb1-4998-b05d-8d88cba39d5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_test
+    - node
+id: node.field_split
+field_name: field_split
+entity_type: node
+type: rgb_item
+settings: {  }
+module: field_test
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
