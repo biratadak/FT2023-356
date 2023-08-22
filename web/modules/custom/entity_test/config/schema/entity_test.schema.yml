@@ -1,0 +1,14 @@
+entity_test.award_winning_movies.*:
+  type: config_entity
+  label: Award winning movies
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    uuid:
+      type: string
+    description:
+      type: string

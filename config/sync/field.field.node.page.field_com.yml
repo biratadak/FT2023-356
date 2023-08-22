@@ -1,0 +1,21 @@
+uuid: ce5b3678-7450-4f2a-bfb1-b68575da2fc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_com
+    - node.type.page
+  module:
+    - field_test
+id: node.page.field_com
+field_name: field_com
+entity_type: node
+bundle: page
+label: Combined
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: rgb_item

@@ -1,0 +1,21 @@
+uuid: f892f4b8-cf0d-454c-b951-e304938ae4a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pallete
+    - node.type.page
+  module:
+    - field_test
+id: node.page.field_pallete
+field_name: field_pallete
+entity_type: node
+bundle: page
+label: Pallete
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: rgb_item

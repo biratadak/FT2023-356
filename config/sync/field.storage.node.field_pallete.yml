@@ -1,0 +1,19 @@
+uuid: bde4bac6-9434-47f6-8708-852396746b9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_test
+    - node
+id: node.field_pallete
+field_name: field_pallete
+entity_type: node
+type: rgb_item
+settings: {  }
+module: field_test
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
