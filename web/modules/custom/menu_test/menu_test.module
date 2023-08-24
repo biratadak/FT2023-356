@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Adds budget comparison text in every movie node.
+ */
+
+/**
+ * {@inheritDoc}
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function menu_test_node_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($entity->bundle() === 'movie') {
+    $config = \Drupal::config('movie_test.movie_budget');
+    $cost = $entity->get('field_movie_price')->getValue()['0']['value'];
+    $budget = $config->get('movie_budget');
+    // Set custom text depending on the movie cost and predefined budget.
+    $text = $cost > $budget ? "The movie is over budget." : ($cost < $budget ? "The movie is under budget." : "The movie is within budget.");
+
+    $build['budget_text'] = [
+      '#type' => 'markup',
+      '#prefix' => '<h3>',
+      '#markup' => $text,
+      '#suffix' => '</h3>',
+      '#cache' => [
+        'tags' => $config->getCacheTags(),
+      ],
+
+    ];
+  }
+}

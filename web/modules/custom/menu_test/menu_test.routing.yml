@@ -1,0 +1,7 @@
+movie_test.movie_budet_form:
+  path: admin/config/movie-budget
+  title: Default Movie Budget
+  defaults:
+    _form: Drupal\menu_test\Form\MovieBudgetForm
+  requirements:
+    _role: 'content_editor+administrator'

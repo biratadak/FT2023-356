@@ -1,0 +1,6 @@
+movie_test.movie_budget_link:
+  title: 'Movie Budget'
+  description: 'Link to the movie budget config page'
+  parent: system.admin
+  route_name: movie_test.movie_budet_form
+  wieght: 6
