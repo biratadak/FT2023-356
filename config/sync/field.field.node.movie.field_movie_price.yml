@@ -1,0 +1,25 @@
+uuid: 1b80c90a-58ef-41f4-afb9-98528a712b99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_price
+    - node.type.movie
+_core:
+  default_config_hash: sf8VIVR-xJuqmV7t9eLNbON8wwLlNxONuncYi3v6Oes
+id: node.movie.field_movie_price
+field_name: field_movie_price
+entity_type: node
+bundle: movie
+label: 'Movie price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 1000
+  prefix: $
+  suffix: ''
+field_type: integer
