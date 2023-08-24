@@ -1,0 +1,21 @@
+uuid: 1d57fd89-c6cf-462a-bdaa-9763631e84bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_split
+    - node.type.page
+  module:
+    - field_test
+id: node.page.field_split
+field_name: field_split
+entity_type: node
+bundle: page
+label: Split
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: rgb_item

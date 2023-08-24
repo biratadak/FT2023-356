@@ -1,0 +1,5 @@
+name: Entity Test
+type: module
+description: FT2023-366 tasks and testing.
+core_version_requirement: ^10
+package: Custom

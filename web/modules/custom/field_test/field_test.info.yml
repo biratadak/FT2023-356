@@ -1,0 +1,5 @@
+name: Field Test
+type: module
+description: Field API tasks
+core_version_requirement: ^10
+package: Custom

@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file delete all nodes of movie bundle during uninstalltion
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function entity_test_uninstall() {
+  // Delete all nodes of the custom entity type.
+  $entity_type = 'movie';
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', $entity_type)
+    ->accessCheck(FALSE)
+    ->execute();
+
+  // Load and delete nodes.
+  if (!empty($nids)) {
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $nodes = $storage->loadMultiple($nids);
+
+    foreach ($nodes as $node) {
+      $node->delete();
+    }
+  }
+
+}
