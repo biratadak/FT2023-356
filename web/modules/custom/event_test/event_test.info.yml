@@ -1,7 +1,8 @@
-name: Menu Test
+name: Events Testing 
 type: module
 core_version_requirement: ^10
-description: Test menu API tasks
+description: Testing
+package: Custom
 dependencies:
   - entity_test #requires movie entity type to run.
-package: AAA
+  - menu_test #requires movie config form to run.
