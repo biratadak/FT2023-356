@@ -1,6 +1,6 @@
 services:
   event_test.my_event:
-    class: 'Drupal\event_test\EventSubscriber\ConfigEventsSubscriber'
+    class: 'Drupal\event_test\EventSubscriber\KernelEventsSubscriber'
     arguments: ['@config.factory']
     tags:
       - { name: event_subscriber }
