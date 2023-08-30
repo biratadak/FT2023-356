@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\database_test\Form;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -51,6 +52,7 @@ final class MyForm extends FormBase {
     try {
       $tid = $form_state->getValue('field_taxonomy_tags');
       \Drupal::messenger()->addMessage($this->t('Data Retrived Successfully.'));
+      Cache::invalidateTags(['tax-page']);
       $form_state->setRedirect('database_test.taxonomy_details_page', ['tid' => $tid]);
     }
     catch (\Exception $ex) {

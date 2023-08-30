@@ -146,6 +146,9 @@ class DatabaseTestController extends ControllerBase {
     return [
       '#theme' => 'taxonomy_details',
       '#data'  => $result,
+      '#cache'  => [
+         'tags' => ['tax-page']
+      ],
     ];
   }
 
