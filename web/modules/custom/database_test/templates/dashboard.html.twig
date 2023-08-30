@@ -1,0 +1,57 @@
+<h5>Total Event Counts</h5>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      {% for key,val in data.yearCount %}
+        Total events in
+        {{ key }}:
+        {{ val }}
+        <br>
+      {% endfor %}
+    </div>
+
+    <div class="col-4">
+      {% for key,val in data.quarterCount|sort %}
+        Total events in
+        {{ key }}
+        quarter:
+        {{ val }}
+        <br>
+      {% endfor %}
+    </div>
+    
+    <div class="col-2">
+      {% for key,val in data.eventTypeCount|sort %}
+        {{ key }}:
+        {{ val }}
+        <br>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{# Showing all events in table format #}
+<table class='table table-striped text-center'>
+  <thead class="thead-dark">
+    <tr>
+      <th scope='col'>S_No.</th>
+      <th scope='col'>Name</th>
+      <th scope='col'>Date</th>
+      <th scope='col'>Quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for key,val in data %}
+      {% if key != 'yearCount' and key != 'quarterCount' and key != 'eventTypeCount' %}
+        <tr>
+          {# {{ dump(i)  }} #}
+          <td>{{ key }}</td>
+          <td>{{ val.title }}</td>
+          <td>{{ val.year }}</td>
+          <td>{{ val.quarter }}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>

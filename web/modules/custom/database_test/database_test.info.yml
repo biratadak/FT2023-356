@@ -1,0 +1,5 @@
+name: 'DB Test'
+type: module
+description: 'Database tasks'
+package: 'AAA'
+core_version_requirement: ^10

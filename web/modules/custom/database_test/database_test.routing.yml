@@ -1,0 +1,7 @@
+database_test.event_details:
+  path: '/database-test/event-details'
+  defaults:
+    _title: 'Event Details'
+    _controller: '\Drupal\database_test\Controller\DatabaseTestController'
+  requirements:
+    _permission: 'access content'
