@@ -5,3 +5,19 @@ database_test.event_details:
     _controller: '\Drupal\database_test\Controller\DatabaseTestController'
   requirements:
     _permission: 'access content'
+
+database_test.taxonomy_details_form:
+  path: '/database-test/taxonomy-form'
+  defaults:
+    _title: 'Taxonomy Input Form'
+    _form: 'Drupal\database_test\Form\MyForm'
+  requirements:
+    _permission: 'access content'
+
+database_test.taxonomy_details_page:
+  path: '/database-test/taxonomy-details'
+  defaults:
+    _title: 'Taxonomy Details'
+    _controller: 'Drupal\database_test\Controller\DatabaseTestController::showTaxonomyData'
+  requirements:
+    _permission: 'access content'

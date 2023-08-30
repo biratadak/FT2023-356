@@ -5,6 +5,7 @@ namespace Drupal\database_test\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Returns responses for DB Test routes.
@@ -108,6 +109,44 @@ class DatabaseTestController extends ControllerBase {
 
     // Return the data and there counts combined together.
     return $data + $dataCounter;
+  }
+
+  /**
+   * Get data from database and show in taxonomy template.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   Stores the request Id.
+   *
+   * @return array
+   *   returns theme render array.
+   */
+  public function showTaxonomyData(Request $request) {
+    $tid = $request->get('tid');
+    try {
+      // This table has title values of event.
+      $query = $this->connection->select('node_field_data', 'n');
+      $query->join('node__field_type', 'nft', 'nft.entity_id=n.nid');
+      $query->join('taxonomy_term_field_data', 'ttfd', 'ttfd.tid=nft.field_type_target_id');
+      $query->join('taxonomy_term_data', 'ttd', 'ttd.tid=nft.field_type_target_id');
+
+      // Add Fields to show().
+      $query->fields('n', ['title', 'nid']);
+      $query->addField('ttfd', 'name', 'eventType');
+      $query->addField('ttd', 'uuid');
+      $query->addField('ttd', 'tid');
+
+      // Getting only nodes that have '$tid' term id.
+      $query->condition('ttd.tid', $tid, '=');
+
+      $result = $query->execute()->fetchAll();
+    }
+    catch (\Exception $e) {
+      echo 'Error: ' . $e->getMessage();
+    }
+    return [
+      '#theme' => 'taxonomy_details',
+      '#data'  => $result,
+    ];
   }
 
 }

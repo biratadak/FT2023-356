@@ -45,7 +45,6 @@
     {% for key,val in data %}
       {% if key != 'yearCount' and key != 'quarterCount' and key != 'eventTypeCount' %}
         <tr>
-          {# {{ dump(i)  }} #}
           <td>{{ key }}</td>
           <td>{{ val.title }}</td>
           <td>{{ val.year }}</td>

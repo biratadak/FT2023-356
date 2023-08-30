@@ -16,5 +16,12 @@ function database_test_theme($existing, $type, $theme, $path) {
         'title' => NULL,
       ],
     ],
+    'taxonomy_details' => [
+      'variables' => [
+        'data' => [],
+        'tid' => NULL,
+        'title' => NULL,
+      ],
+    ],
   ];
 }

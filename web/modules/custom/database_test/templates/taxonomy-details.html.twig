@@ -1,0 +1,21 @@
+
+<table class='table table-striped text-center'>
+  <thead class="thead-dark">
+    <tr>
+      <th scope='col'>Term Id.</th>
+      <th scope='col'>UUID</th>
+      <th scope='col'>Title</th>
+      <th scope='col'>Node Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in data %}
+        <tr>
+          <td>{{ item.tid }}</td>
+          <td>{{ item.uuid }}</td>
+          <td><a href="/node/{{ item.nid }}">{{ item.title }}</a></td>
+          <td>{{ item.nid }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
